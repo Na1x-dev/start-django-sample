@@ -1,15 +1,16 @@
 from django.shortcuts import render
-from .models import Car
-from rest_framework import generics
+from .models import Car, House
+from rest_framework import generics, viewsets
 
 from .serializer import CarSerializer
 
 
-class CarsAPIView(generics.ListCreateAPIView):
+class CarViewSet(viewsets.ModelViewSet):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
 
 
-class CarAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Car.objects.all()
+class HouseViewSet(viewsets.ModelViewSet):
+    queryset = House.objects.all()
     serializer_class = CarSerializer
+

@@ -11,3 +11,10 @@ class Car(models.Model):
 
     def __str__(self):
         return f"{self.brand} {self.mark} {self.year} - {self.price}$"
+
+
+class House(models.Model):
+    address = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.address}"
