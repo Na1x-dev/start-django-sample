@@ -8,5 +8,6 @@ router.register('cars', CarViewSet)
 router.register('houses', HouseViewSet)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('auth/', include('rest_framework.urls')),
 ]
