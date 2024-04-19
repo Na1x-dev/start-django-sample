@@ -14,7 +14,8 @@ class CarViewSet(viewsets.ModelViewSet):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
     permission_classes = (AllForAdminOtherReadOnlyPermission, )
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [filters.SearchFilter]
+    # filter_backends = [filters.OrderingFilter]
     search_fields = ['brand']
 
 
